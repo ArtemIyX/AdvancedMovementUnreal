@@ -1,24 +1,30 @@
 {
-	"FileVersion": 3,
-	"Version": 1,
-	"VersionName": "1.0",
-	"FriendlyName": "AdvancedMovement",
-	"Description": "Advanced movement component plugin",
-	"Category": "Other",
-	"CreatedBy": "Wellsaik",
-	"CreatedByURL": "https://github.com/ArtemIyX",
-	"DocsURL": "",
-	"MarketplaceURL": "",
-	"SupportURL": "",
-	"CanContainContent": true,
-	"IsBetaVersion": false,
-	"IsExperimentalVersion": false,
-	"Installed": false,
-	"Modules": [
-		{
-			"Name": "AdvancedMovement",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		}
-	]
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0",
+  "FriendlyName": "AdvancedMovement",
+  "Description": "Advanced movement component plugin",
+  "Category": "Other",
+  "CreatedBy": "Wellsaik",
+  "CreatedByURL": "https://github.com/ArtemIyX",
+  "DocsURL": "",
+  "MarketplaceURL": "",
+  "SupportURL": "",
+  "CanContainContent": true,
+  "IsBetaVersion": false,
+  "IsExperimentalVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "AdvancedMovement",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "AdvancedLogger",
+      "Enabled": true
+    }
+  ]
 }

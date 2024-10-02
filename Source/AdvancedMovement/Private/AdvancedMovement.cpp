@@ -2,6 +2,8 @@
 
 #include "AdvancedMovement.h"
 
+DEFINE_LOG_CATEGORY(LogAdvancedMovement);
+
 #define LOCTEXT_NAMESPACE "FAdvancedMovementModule"
 
 void FAdvancedMovementModule::StartupModule()
