@@ -182,11 +182,11 @@ protected:
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Movement|Walk")
 	float Sprint_MaxSpeed{550.0f};
 
-	/** 
-	 * @brief The maximum walk speed.
-	 */
-	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Movement|Walk")
-	float Walk_MaxSpeed{300.0f};
+	// /** 
+	//  * @brief The maximum walk speed.
+	//  */
+	// UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Movement|Walk")
+	// float Walk_MaxSpeed{300.0f};
 
 	/** 
 	 * @brief The minimum speed during a slide.
