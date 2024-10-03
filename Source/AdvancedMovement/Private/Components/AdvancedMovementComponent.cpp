@@ -124,10 +124,6 @@ void UAdvancedMovementComponent::BeginPlay()
 	// ...
 }
 
-UCapsuleComponent* UAdvancedMovementComponent::GetOwnerCapsuleComponent() const
-{
-	return GetOwner()->FindComponentByClass<UCapsuleComponent>();
-}
 
 void UAdvancedMovementComponent::InitializeComponent()
 {
@@ -331,14 +327,14 @@ bool UAdvancedMovementComponent::IsSprintingAllowed() const
 		&& !IsCustomMovementMode(CMOVE_Slide)
 		&& IsMovingOnGround() // Is moving on ground
 		&& Velocity.SizeSquared() >= 100.0f // Velocity must be not 0.0f
-		&& !Safe_bWantsToSprint; // We should not sprinting already
+		&& !Safe_bWantsToSprint; // We should not sprint already
 }
 
 void UAdvancedMovementComponent::EnterSlide(EMovementMode PrevMode, ECustomMovementMode PrevCustomMode)
 {
 	bWantsToCrouch = true;
 	Velocity += Velocity.GetSafeNormal2D() * Slide_EnterImpulse;
-	FindFloor(UpdatedComponent->GetComponentLocation(), CurrentFloor, true, NULL);
+	FindFloor(UpdatedComponent->GetComponentLocation(), CurrentFloor, true, nullptr);
 }
 
 void UAdvancedMovementComponent::ExitSlide()

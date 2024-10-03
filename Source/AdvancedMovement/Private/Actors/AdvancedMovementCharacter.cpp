@@ -21,23 +21,6 @@ AAdvancedMovementCharacter::AAdvancedMovementCharacter(const FObjectInitializer&
 	AdvancedMovementComponent->OnDashStarted.AddDynamic(this, &AAdvancedMovementCharacter::OnDashStartedHandler);
 }
 
-// Called when the game starts or when spawned
-void AAdvancedMovementCharacter::BeginPlay()
-{
-	Super::BeginPlay();
-}
-
-// Called every frame
-void AAdvancedMovementCharacter::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-}
-
-// Called to bind functionality to input
-void AAdvancedMovementCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-}
 
 void AAdvancedMovementCharacter::OnSlideEnteredHandler(UAdvancedMovementComponent* MovementComponent,
                                                        EMovementMode PrevMode, uint8 PrevCustomMode)
