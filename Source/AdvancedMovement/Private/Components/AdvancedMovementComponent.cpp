@@ -10,7 +10,7 @@
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/Character.h"
 #include "Net/UnrealNetwork.h"
-#include "Subsystems/LoggerSubsystem.h"
+#include "Subsystems/LoggerLib.h"
 
 UAdvancedMovementComponent::FSavedMove_Advanced::FSavedMove_Advanced()
 {
