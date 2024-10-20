@@ -294,8 +294,6 @@ float UAdvancedMovementComponent::GetMaxSpeed() const
 	{
 	case CMOVE_Slide:
 		return Slide_MaxSpeed;
-	// case CMOVE_Prone:
-	// 	return Prone_MaxSpeed;
 	default:
 		TRACEERROR(LogAdvancedMovement, "Invalid Movement Mode");
 		return 0.0f;

@@ -33,7 +33,7 @@ protected:
 	/** 
 	 * @brief The advanced movement component that handles specialized movement logic.
 	 */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="AAdvancedMovementCharacter|Components")
+	UPROPERTY()
 	class UAdvancedMovementComponent* AdvancedMovementComponent;
 
 	/**
