@@ -298,7 +298,7 @@ float UAdvancedMovementComponent::GetMaxSpeed() const
 		TRACEERROR(LogAdvancedMovement, "Invalid Movement Mode");
 		return 0.0f;
 	}
-	return 0.0f;
+	//return 0.0f;
 }
 
 float UAdvancedMovementComponent::GetMaxBrakingDeceleration() const
