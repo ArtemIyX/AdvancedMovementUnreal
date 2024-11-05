@@ -155,4 +155,7 @@ public:
 	 * @return FCollisionQueryParams The collision query parameters that ignore the character.
 	 */
 	FCollisionQueryParams GetIgnoreCharacterParams() const;
+
+	UFUNCTION(BlueprintNativeEvent, Category="AAdvancedMovementCharacter|Movement")
+	bool CanDash();
 };

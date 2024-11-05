@@ -103,3 +103,8 @@ FCollisionQueryParams AAdvancedMovementCharacter::GetIgnoreCharacterParams() con
 	params.AddIgnoredActor(this);
 	return params;
 }
+
+bool AAdvancedMovementCharacter::CanDash_Implementation()
+{
+	return true;
+}

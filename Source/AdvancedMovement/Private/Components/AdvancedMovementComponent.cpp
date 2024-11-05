@@ -734,7 +734,7 @@ bool UAdvancedMovementComponent::CanDash() const
 		!IsSprinting() &&
 		!IsSliding() &&
 		!IsCrouching() &&
-		!IsFalling();
+		!IsFalling() && AdvancedCharacter->CanDash();
 }
 
 void UAdvancedMovementComponent::PerformDash()
