@@ -803,7 +803,7 @@ UAdvancedMovementComponent::EDashDirection UAdvancedMovementComponent::Calculate
 
 float UAdvancedMovementComponent::CalculateDirection() const
 {
-	if (!AdvancedCharacter)
+	if (!IsValid(AdvancedCharacter))
 		return 0.0f;
 	const FMatrix rotMatrix = FRotationMatrix(AdvancedCharacter->GetControlRotation());
 	const FVector forwardVector = rotMatrix.GetScaledAxis(EAxis::X);
