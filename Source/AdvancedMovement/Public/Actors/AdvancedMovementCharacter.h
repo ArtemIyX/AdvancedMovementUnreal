@@ -158,4 +158,7 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent, Category="AAdvancedMovementCharacter|Movement")
 	bool CanDash();
+
+	UFUNCTION(BlueprintNativeEvent, Category="AAdvancedMovementCharacter|Movement")
+	bool CanSprint();
 };

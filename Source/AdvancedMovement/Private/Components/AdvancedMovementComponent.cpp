@@ -190,7 +190,20 @@ void UAdvancedMovementComponent::UpdateFromCompressedFlags(uint8 Flags)
 {
 	Super::UpdateFromCompressedFlags(Flags);
 
-	Safe_bWantsToSprint = (Flags & FSavedMove_Advanced::CompressedFlags::FLAG_Sprint) != 0;
+	bool bWantsSprint = (Flags & FSavedMove_Advanced::CompressedFlags::FLAG_Sprint) != 0;
+	if (bWantsSprint)
+	{
+		if (IsSprintingAllowed())
+		{
+			Safe_bWantsToSprint = true;
+		}
+	}
+	else
+	{
+		Safe_bWantsToSprint = false;
+	}
+	//UE_LOG(LogTemp, Warning, TEXT("UpdateFromCompressedFlags, Safe_bWantsToSprint: %d"), Safe_bWantsToSprint);
+
 	Safe_bWantsToSlide = (Flags & FSavedMove_Advanced::CompressedFlags::FLAG_Slide) != 0;
 	Safe_bWantsToDash = (Flags & FSavedMove_Advanced::CompressedFlags::FLAG_Dash) != 0;
 }
@@ -284,8 +297,13 @@ bool UAdvancedMovementComponent::CanCrouchInCurrentState() const
 
 float UAdvancedMovementComponent::GetMaxSpeed() const
 {
-	if (IsMovementMode(MOVE_Walking) && Safe_bWantsToSprint && !IsCrouching())
+	if (IsMovementMode(MOVE_Walking)
+		&& Safe_bWantsToSprint
+		&& !IsCrouching())
+	{
 		return Sprint_MaxSpeed;
+	}
+
 
 	if (MovementMode != MOVE_Custom)
 		return Super::GetMaxSpeed();
@@ -325,7 +343,8 @@ bool UAdvancedMovementComponent::IsSprintingAllowed() const
 		&& !IsCustomMovementMode(CMOVE_Slide)
 		&& IsMovingOnGround() // Is moving on ground
 		&& Velocity.SizeSquared() >= 100.0f // Velocity must be not 0.0f
-		&& !Safe_bWantsToSprint; // We should not sprint already
+		&& !Safe_bWantsToSprint
+		&& AdvancedCharacter->CanSprint(); // We should not sprint already
 }
 
 void UAdvancedMovementComponent::EnterSlide(EMovementMode PrevMode, ECustomMovementMode PrevCustomMode)

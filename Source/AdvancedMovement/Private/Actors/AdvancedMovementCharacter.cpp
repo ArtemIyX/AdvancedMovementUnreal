@@ -104,6 +104,11 @@ FCollisionQueryParams AAdvancedMovementCharacter::GetIgnoreCharacterParams() con
 	return params;
 }
 
+bool AAdvancedMovementCharacter::CanSprint_Implementation()
+{
+	return true;
+}
+
 bool AAdvancedMovementCharacter::CanDash_Implementation()
 {
 	return true;
