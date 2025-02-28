@@ -419,6 +419,8 @@ public:
     UFUNCTION(BlueprintCallable)
     virtual void DashPressed();
 
+	UFUNCTION(BlueprintCallable)
+	bool IsAbleToDash() const;
     /**
     * @brief Called when the dash button is released.
     */

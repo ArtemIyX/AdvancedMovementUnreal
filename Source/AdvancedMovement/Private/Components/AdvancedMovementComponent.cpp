@@ -719,7 +719,7 @@ void UAdvancedMovementComponent::SlideReleased()
 void UAdvancedMovementComponent::DashPressed()
 {
 	const float currentTime = GetWorld()->GetTimeSeconds();
-	if (currentTime - DashStartTime >= Dash_CooldownDuration)
+	if (IsAbleToDash())
 	{
 		Safe_bWantsToDash = true;
 	}
@@ -730,6 +730,12 @@ void UAdvancedMovementComponent::DashPressed()
 		                     &UAdvancedMovementComponent::OnDashCooldownFinished,
 		                     Dash_CooldownDuration - (currentTime - DashStartTime));
 	}
+}
+
+bool UAdvancedMovementComponent::IsAbleToDash() const
+{
+	const float currentTime = GetWorld()->GetTimeSeconds();
+	return currentTime - DashStartTime >= Dash_CooldownDuration;
 }
 
 void UAdvancedMovementComponent::DashReleased()
