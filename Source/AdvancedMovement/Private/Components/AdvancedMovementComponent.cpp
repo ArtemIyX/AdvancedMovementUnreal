@@ -252,8 +252,8 @@ void UAdvancedMovementComponent::UpdateCharacterStateBeforeMovement(float DeltaS
 		const bool bAuthProxy = CharacterOwner->HasAuthority() && !CharacterOwner->IsLocallyControlled();
 		const bool bEnoughTime = GetWorld()->GetTimeSeconds() - DashStartTime > Dash_AuthCooldownDuration;
 		const bool bCanDash = CanDash();
-		UE_LOG(LogTemp, Log, TEXT("Safe_bWantsToDash: %d, bCanDash: %d\n!bAuthProxy: %d || %d: bEnoughTime"),
-		       Safe_bWantsToDash, bCanDash, bAuthProxy, bEnoughTime);
+		// UE_LOG(LogTemp, Log, TEXT("Safe_bWantsToDash: %d, bCanDash: %d\n!bAuthProxy: %d || %d: bEnoughTime"),
+		//        Safe_bWantsToDash, bCanDash, bAuthProxy, bEnoughTime);
 		if (Safe_bWantsToDash && !bCanDash)
 		{
 			Safe_bWantsToDash = false;
