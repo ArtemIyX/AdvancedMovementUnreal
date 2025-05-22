@@ -19,4 +19,4 @@ This plugin is designed for developers aiming to create fluid, responsive, and d
 > Note: Use of older versions is possible, but at your discretion.
 
 ## Docs
-Soon...
+[Github Pages](https://artemiyx.github.io/riftborn-doc/plugins/advanced-movement/)
