@@ -284,9 +284,6 @@ void UAdvancedMovementComponent::PhysCustom(float deltaTime, int32 Iterations)
 	case CMOVE_Slide:
 		PhysSlide(deltaTime, Iterations);
 		break;
-	// case CMOVE_Prone:
-	// 	PhysProne(deltaTime, Iterations);
-	// 	break;
 	default:
 		TRACEERROR(LogTemp, "Invalid movement mode");
 	}
